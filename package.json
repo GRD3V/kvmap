@@ -1,0 +1,44 @@
+{
+  "name": "kvmap",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/GRD3V/kvmap",
+  "repository": "git@github.com:GRD3V/kvmap.git",
+  "keywords": [
+    "key-value",
+    "keyvalue",
+    "store",
+    "database",
+    "in-memory"
+  ],
+  "author": {
+    "name": "GRD3V",
+    "email": "contact.grd3v@pm.me",
+    "url": "https://github.com/GRD3V/"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist/index.cjs",
+    "./dist/index.mjs",
+    "./dist/index.d.ts"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "watch": "tsc --watch",
+    "build": "unbuild",
+    "test:unit": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.2",
+    "unbuild": "^2.0.0",
+    "vitest": "^0.34.6"
+  }
+}
