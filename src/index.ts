@@ -8,9 +8,9 @@ export class KVMap<Map> {
   };
 
   constructor(initDb?: Partial<Map>) {
+    this.listenerList = {};
     if (typeof initDb === "object" && !Array.isArray(initDb)) {
       this.db = { ...this.db, ...initDb };
-      this.listenerList = {};
     }
   }
 
