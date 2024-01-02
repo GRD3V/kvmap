@@ -37,6 +37,15 @@ console.log(kvmap.get("c")); // 123
 
 kvmap.delete("a");
 console.log(kvmap.get("a")); // undefined
+
+// With listener
+kvmap.addListener("b", (value) => {
+  console.log(value);
+});
+
+kvmap.set("b", { x: 2, y: 1 });
+
+// console: {x: 2, y: 1}
 ```
 
 ---
@@ -70,4 +79,13 @@ console.log(kvmap.get("c")); // 123
 
 kvmap.delete("a");
 console.log(kvmap.get("a")); // undefined
+
+// With listener
+kvmap.addListener("b", (value) => {
+  console.log(value);
+});
+
+kvmap.set("b", { x: 2, y: 1 });
+
+// console: {x: 2, y: 1}
 ```

@@ -5,11 +5,12 @@ export class KVMap<Map> {
 
   private listenerList: {
     [key in keyof Map]?: KeyListener<any>[];
-  } = {};
+  };
 
   constructor(initDb?: Partial<Map>) {
     if (typeof initDb === "object" && !Array.isArray(initDb)) {
       this.db = { ...this.db, ...initDb };
+      this.listenerList = {};
     }
   }
 
