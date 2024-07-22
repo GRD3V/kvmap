@@ -1,16 +1,16 @@
 type KeyListener<T> = (value: T) => void | Promise<void>;
+type Db<Map> = { [key in keyof Map | string]?: any };
 
 export class KVMap<Map> {
-  private db: { [key in keyof Map | string]?: any };
+  private db: Db<Map> = {};
 
   private listenerList: {
     [key in keyof Map]?: KeyListener<any>[];
-  };
+  } = {};
 
-  constructor(initDb?: Partial<Map>) {
-    this.listenerList = {};
+  constructor(initDb?: Db<Map>) {
     if (typeof initDb === "object" && !Array.isArray(initDb)) {
-      this.db = { ...this.db, ...initDb };
+      this.db = initDb;
     }
   }
 
